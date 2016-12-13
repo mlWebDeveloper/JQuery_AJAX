@@ -1,0 +1,30 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery Test</title>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="scripts/data.json"></script>
+</head>
+<body>
+	
+	<script>
+
+	$(document).ready(function () {	
+
+	  $.ajax({
+	  	type: 'GET',
+	  	url: 'scripts/data.json',
+	  	dataType: 'json',
+	  	success: function (data) {
+	  		document.write(data.tags[0]);
+	  	},
+	  	error: function () {
+	  		alert('an ajax error occured');
+	  	} // error:
+	  }); // $.ajax({
+	}); // $(document).ready
+
+	</script>
+
+</body>
+</html>
